@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj & Co Properties</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:Poppins;background:#f5f5f5}
+section{padding:80px 20px}
+
+nav{position:fixed;width:100%;background:#111;color:white;display:flex;justify-content:space-between;padding:15px 30px}
+nav a{color:white;margin:0 10px;text-decoration:none}
+
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');background-size:cover;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h1{font-size:55px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+
+.card{background:white;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:15px}
+
+.section-title{text-align:center;margin-bottom:30px}
+.price{color:#ff6600;font-weight:bold}
+
+.btn{background:#ff6600;color:white;padding:10px;border:none;cursor:pointer;margin-top:10px}
+
+.contact-box{background:white;padding:20px;border-radius:15px;max-width:800px;margin:auto;text-align:center}
+
+footer{background:#111;color:white;padding:40px;margin-top:50px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%}
+.call-btn{position:fixed;bottom:80px;right:20px;background:#ff6600;color:white;padding:15px;border-radius:50%}
+#contact {
+  padding: 80px 10%;
+  background: #f9f9f9;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-left h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.contact-left p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Poppins;
+}
+
+.contact-right textarea {
+  height: 120px;
+}
+
+.contact-right button {
+  width: fit-content;
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+  .contact-container {
+    flex-direction: column;
+  }
+}
+.footer {
+  background: #111;
+  color: #fff;
+  padding-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 10%;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+.social a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #fff;
+  background: green;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+  .footer-container {
+    flex-direction: column;
+  }
+}
+#add-property {
+  padding: 80px 10%;
+  background: #fff;
+}
+
+.property-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.property-form input,
+.property-form select,
+.property-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.property-form button {
+  width: fit-content;
+}
+#properties .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
+}</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h2>Raj & Co</h2>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#properties">Properties</a>
+<a href="#contact">Contact</a>
+<a href="#add-property">Add Property</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<h1>Discover Premium Properties in Panchkula</h1>
+<p>Your Trusted Real Estate Partner for Residential & Commercial Deals</p>
+<a href="#contact"><button class="btn">Get in Touch</button></a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">About Raj & Co Properties</h2>
+
+<p class="big-text">
+Raj & Co Properties is a trusted real estate consultancy based in Panchkula, offering a wide range of property solutions across residential, commercial, and industrial segments. 
+With years of experience in the property market, we focus on delivering genuine deals, transparent transactions, and the best value for our clients.
+</p>
+
+<div class="grid">
+
+<div class="card"><div class="card-body">
+<h3>🏠 Residential Houses</h3>
+<p>
+We deal in premium residential houses ranging from 2 Marla to 5 Kanal. Our properties are located in well-developed sectors with modern infrastructure, making them ideal for comfortable family living.
+</p>
+</div></div>
+
+<div class="card"><div class="card-body">
+<h3>📍 Residential Plots</h3>
+<p>
+We provide verified residential plots with clear titles, ensuring safe investments. Whether you are planning to build your dream home or invest for future growth, we offer the best options.
+</p>
+</div></div>
+
+<div class="card"><div class="card-body">
+<h3>🏢 Commercial Properties</h3>
+<p>
+Our commercial portfolio includes shops, showrooms, and commercial plots in high-demand areas, ensuring maximum visibility and strong return on investment.
+</p>
+</div></div>
+
+<div class="card"><div class="card-body">
+<h3>🏬 SCO / Booth / Industrial</h3>
+<p>
+We specialize in SCOs, booths, and industrial sheds for business and manufacturing needs, located in prime commercial zones.
+</p>
+</div></div>
+
+<div class="card"><div class="card-body">
+<h3>🌾 Agricultural Land</h3>
+<p>
+We also deal in agricultural land and farmhouses suitable for long-term investment, farming, and peaceful living away from city noise.
+</p>
+</div></div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2 class="section-title">Our Services</h2>
+
+<div class="grid">
+
+<div class="card"><div class="card-body">
+<h3>Property Buying</h3>
+<p>We help you find the best property based on your budget, location preference, and future investment value.</p>
+</div></div>
+
+<div class="card"><div class="card-body">
+<h3>Property Selling</h3>
+<p>Get the best price for your property with our strong market network and professional dealing.</p>
+</div></div>
+
+<div class="card"><div class="card-body">
+<h3>Investment Advice</h3>
+<p>We guide you with the right investment opportunities to maximize your returns in real estate.</p>
+</div></div>
+
+</div>
+</section>
+
+<!-- PROPERTIES -->
+<section id="properties">
+<h2 class="section-title">Featured Properties</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<div class="card-body">
+<h3>10 Marla Luxury House</h3>
+<p>Sector 21 Panchkula</p>
+<p class="price">₹1.2 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
+<div class="card-body">
+<h3>8 Marla Modern Floor</h3>
+<p>Sector 11 Panchkula</p>
+<p class="price">₹85 Lac</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+</div>
+</section>
+<section id="add-property">
+<h2 class="section-title">Add Property</h2>
+
+<form class="property-form" id="propertyForm" enctype="multipart/form-data">
+<select id="type" onchange="showType()">
+<option value="">Select Type</option>
+<option value="residential">Residential</option>
+<option value="commercial">Commercial</option>
+</select>
+
+<div id="residential-options" style="display:none;">
+<select id="resType" onchange="showResOptions()">
+<option value="">Select Property</option>
+<option value="house">Independent House</option>
+<option value="flat">Flat</option>
+<option value="floor">Floor</option>
+<option value="plot">Plot</option>
+</select>
+</div>
+
+<div id="dynamic-fields"></div>
+
+<button type="submit" class="btn">Submit Property</button>
+</form>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="contact-container">
+
+<!-- LEFT SIDE -->
+<div class="contact-left">
+<h2>Contact Us</h2>
+<p>We are here to help you find the best property deals in Panchkula.</p>
+
+<p><strong>📞 Phone:</strong> 9915499933</p>
+<p><strong>💬 WhatsApp:</strong> 9915499933</p>
+<p><strong>📧 Email:</strong> kumarhemantraj@gmail.com</p>
+<p><strong>📍 Office:</strong> House No. 500, Sector 15, Panchkula, Haryana</p>
+
+<button class="btn" onclick="call()">Call Now</button>
+<button class="btn" onclick="whatsapp()">WhatsApp</button>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="contact-right">
+<form onsubmit="sendToWhatsapp(); return false;">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="phone" placeholder="Phone Number" required>
+<textarea id="msg" placeholder="Your Message"></textarea>
+
+<button class="btn">Send on WhatsApp</button>
+</form>
+
+<!-- GOOGLE MAP -->
+<iframe 
+src="https://www.google.com/maps?q=House+No+500+Sector+15+Panchkula&output=embed"
+width="100%" height="250" style="border:0; margin-top:20px;" 
+allowfullscreen="" loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- COMPANY -->
+<div class="footer-col">
+<h2>Raj & Co</h2>
+<p>Your Trusted Property Dealer in Panchkula. We deal in Residential, Commercial & Investment Properties.</p>
+</div>
+
+<!-- SERVICES -->
+<div class="footer-col">
+<h3>Our Services</h3>
+<ul>
+<li>Residential Houses</li>
+<li>Residential Plots</li>
+<li>Commercial Properties</li>
+<li>SCO / Booth / Industrial</li>
+<li>Agricultural Land</li>
+</ul>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+
+<!-- CONTACT -->
+<div class="footer-col">
+<h3>Contact Info</h3>
+<p>📞 9915499933</p>
+<p>📧 kumarhemantraj@gmail.com</p>
+<p>📍 House No. 500, Sector 15, Panchkula</p>
+
+<div class="social">
+<a href="https://wa.me/919915499933">WhatsApp</a>
+<a href="tel:9915499933">Call</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+<div class="footer-bottom">
+<p>© 2026 Raj & Co Properties | All Rights Reserved</p>
+</div>
+
+</footer>
+
+<a href="https://wa.me/919915499933" class="whatsapp">💬</a>
+<a href="tel:9915499933" class="call-btn">📞</a>
+
+<script>
+
+function call(){window.location.href="tel:9915499933";}
+function whatsapp(){window.location.href="https://wa.me/919915499933";}
+
+function sendToWhatsapp(){
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let msg = document.getElementById("msg").value;
+
+let url = "https://wa.me/919915499933?text="
++ "Name: " + encodeURIComponent(name) + "%0a"
++ "Phone: " + encodeURIComponent(phone) + "%0a"
++ "Message: " + encodeURIComponent(msg);
+
+window.open(url, "_blank");
+}
+
+function showType(){
+let type = document.getElementById("type").value;
+document.getElementById("residential-options").style.display = 
+(type === "residential") ? "block" : "none";
+}
+
+function showResOptions(){
+  let val = document.getElementById("resType").value;
+  let box = document.getElementById("dynamic-fields");
+
+  if(val === "house" || val === "flat" || val === "floor"){
+  box.innerHTML = `
+    <input type="text" name="title" placeholder="Title (e.g. 3 BHK House)" required>
+
+    <input type="text" name="city" placeholder="City (e.g. Panchkula)" required>
+    <input type="text" name="sector" placeholder="Sector (e.g. 21)" required>
+
+    <input type="text" name="bhk" placeholder="BHK (e.g. 3 BHK)">
+    <input type="text" name="size" placeholder="Size (e.g. 10 Marla)" required>
+
+    <input type="text" name="price" placeholder="Price" required>
+
+    <textarea name="description" placeholder="Description"></textarea>
+
+    <input type="text" name="floor" placeholder="Which Floor">
+
+    <select name="lift">
+      <option value="">Lift Available?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <input type="file" name="image" required>
+  `;
+}
+
+  else if(val === "plot"){
+  box.innerHTML = `
+    <input type="text" name="title" placeholder="Title (e.g. Plot for Sale)" required>
+
+    <input type="text" name="city" placeholder="City" required>
+    <input type="text" name="sector" placeholder="Sector" required>
+
+    <input type="text" name="size" placeholder="Plot Size" required>
+    <input type="text" name="road" placeholder="Road Width">
+
+    <select name="construction">
+      <option value="">Construction Done?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <input type="text" name="price" placeholder="Price" required>
+
+    <textarea name="description" placeholder="Description"></textarea>
+
+    <input type="file" name="image" required>
+  `;
+}
+
+  else{
+    box.innerHTML = "";
+  }
+}
+
+async function loadProperties() {
+  let res = await fetch("http://localhost:3001/properties");
+  let data = await res.json();
+
+  let container = document.querySelector("#properties .grid");
+  container.innerHTML = "";
+
+  data.forEach(p => {
+    container.innerHTML += `
+      <div class="card">
+        <img src="http://localhost:3001${p.image}">
+        <div class="card-body">
+          <h3>${p.title}</h3>
+          <p>${p.city} - ${p.sector}</p>
+          <p class="price">${p.price}</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+window.onload = loadProperties;
+document.getElementById("propertyForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  let formData = new FormData(this);
+
+  let res = await fetch("http://localhost:3001/add-property", {
+    method: "POST",
+    body: formData
+  });
+
+  let data = await res.json();
+  alert(data.message);
+
+  loadProperties(); // refresh list
+});
+</script>
+
+</body>
+</html>
