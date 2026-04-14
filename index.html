@@ -236,24 +236,16 @@ footer{background:#111;color:white;padding:40px;margin-top:50px}
   padding: 8px;
   cursor: pointer;
 }
-
+.nav-links{
+  display: flex;
+}
 @media(max-width: 768px){
   .grid{
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-nav{
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: #111;
-  color: white;
-  z-index: 1000;
-}
+
 .nav-links a{
   margin: 0 10px;
   text-decoration: none;
@@ -288,8 +280,46 @@ nav{
     display: flex;
   }
 }
-.nav-links{
+
+
+
+nav{
+  padding: 10px 15px;
+}
+nav{
+  position: fixed;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: #111;
+  color: white;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Logo */
+nav h2{
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.menu-toggle{
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;   /* ⭐ important fix */
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .menu-toggle{
+    display: block !important;
+    margin-right: 5px; /* ⭐ left shift feel */
+  }
 }
 </style>
 </head>
