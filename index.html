@@ -192,7 +192,111 @@ footer{background:#111;color:white;padding:40px;margin-top:50px}
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   align-items: start;
-}</style>
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+}
+
+.card{
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card img{
+  width: 100%;
+  height: 220px;       /* FIX HEIGHT */
+  object-fit: cover;   /* IMPORTANT – image stretch nahi hogi */
+}
+
+.card-body{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.price{
+  color: #ff5a00;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.btn{
+  background: #ff5a00;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+@media(max-width: 768px){
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #111;
+  color: white;
+}
+
+.nav-links a{
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.menu-toggle{
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+
+  .menu-toggle{
+    display: block;
+  }
+
+  .nav-links{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links a{
+    display: block;
+    padding: 15px;
+    border-top: 1px solid #333;
+  }
+
+  .nav-links.active{
+    display: flex;
+  }
+}
+.menu-toggle{
+  color: white;
+}
+</style>
 </head>
 
 <body>
@@ -200,7 +304,10 @@ footer{background:#111;color:white;padding:40px;margin-top:50px}
 <!-- NAVBAR -->
 <nav>
 <h2>Raj & Co</h2>
-<div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#services">Services</a>
@@ -289,29 +396,149 @@ We also deal in agricultural land and farmhouses suitable for long-term investme
 
 </div>
 </section>
-
 <!-- PROPERTIES -->
 <section id="properties">
 <h2 class="section-title">Featured Properties</h2>
 
 <div class="grid">
 
+<!-- Property 1 -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
 <div class="card-body">
-<h3>10 Marla Luxury House</h3>
-<p>Sector 21 Panchkula</p>
-<p class="price">₹1.2 Cr</p>
+<h3>10 Marla Brand New House</h3>
+<p>Sector 12A Panchkula</p>
+<p class="price">₹8.75 Cr</p>
 <button class="btn" onclick="call()">Call Now</button>
 </div>
 </div>
 
+<!-- Property 2 -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
 <div class="card-body">
-<h3>8 Marla Modern Floor</h3>
+<h3>8 Kanal Second Floor</h3>
+<p>Sector 6 MDC Panchkula</p>
+<p class="price">₹7 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+<div class="card-body">
+<h3>1 Kanal House</h3>
+<p>Sector 8 Panchkula (B-Road)</p>
+<p>3 BHK | South-East Facing | Huge Ramps | Old Construction</p>
+<p class="price">₹16 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 4 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6">
+<div class="card-body">
+<h3>8 Marla House</h3>
 <p>Sector 11 Panchkula</p>
-<p class="price">₹85 Lac</p>
+<p>2 BHK | Corner | 3 Side Open | Premium Commercial | South-East Facing</p>
+<p class="price">₹5.30 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 5 (UPDATED IMAGE) -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1613977257363-707ba9348227">
+<div class="card-body">
+<h3>10 Marla Brand New Ultra Modern House</h3>
+<p>Sector 12A Panchkula</p>
+<p>5 BHK | Park Facing | Modular Kitchen | Lift | All Marble | South-East Facing</p>
+<p class="price">₹8.75 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 6 (UPDATED IMAGE) -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599423300746-b62533397364">
+<div class="card-body">
+<h3>10 Marla House</h3>
+<p>Sector 10 Panchkula</p>
+<p>5 BHK | Double Story | East Facing | Gated Pocket | Well Maintained</p>
+<p class="price">₹6.50 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 7 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+<div class="card-body">
+<h3>10 Marla Plot</h3>
+<p>Sector 23 Panchkula</p>
+<p>Near Park | Adjoining NIFT & IT Park | High Rental Value</p>
+<p class="price">₹8.85 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+<!-- Property 8 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+<div class="card-body">
+<h3>10 Marla House</h3>
+<p>Sector 4 Panchkula</p>
+<p>3 BHK | Single Story | Back Side Open | Ample Parking | West Facing</p>
+<p class="price">₹6.25 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 9 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+<div class="card-body">
+<h3>15 Marla Plot</h3>
+<p>Sector 21 Panchkula (B-Road)</p>
+<p>Corner | East Facing | 2 Side Open | 25% Built-Up | Commercial</p>
+<p class="price">₹8.90 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 10 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<div class="card-body">
+<h3>10 Marla Plot</h3>
+<p>Sector 21 Panchkula (A-Road)</p>
+<p>North Facing | Huge Ramps | Near Golf Course | Commercial</p>
+<p class="price">₹6.25 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 11 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<div class="card-body">
+<h3>3 BHK Duplex Flat</h3>
+<p>Sector 5 MDC Panchkula</p>
+<p>First Floor | Ready to Move | 1 Covered Parking</p>
+<p class="price">₹1.85 Cr</p>
+<button class="btn" onclick="call()">Call Now</button>
+</div>
+</div>
+
+<!-- Property 12 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501183638710-841dd1904471">
+<div class="card-body">
+<h3>Above 1 Kanal Plot</h3>
+<p>Sector 27 Panchkula</p>
+<p>Corner | B-Road | North Facing | 3 Side Open | Commercial</p>
+<p class="price">₹9.25 Cr</p>
 <button class="btn" onclick="call()">Call Now</button>
 </div>
 </div>
@@ -563,6 +790,12 @@ document.getElementById("propertyForm").addEventListener("submit", async functio
 
   loadProperties(); // refresh list
 });
+
+
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
 </script>
 
 </body>
